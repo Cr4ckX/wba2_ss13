@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Gruppenanmeldung XML, Aufgabe 2 -->
 <Teilnehmer>
+    
     <Gruppe id="g0">
         
         <Gruppenleiter id="p0">
@@ -39,4 +40,5 @@
     <Gruppe id="g1">
         <!-- ... -->
     </Gruppe> 
+    
 </Teilnehmer>

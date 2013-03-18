@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Gruppenanmeldung XML, Aufgabe 2 -->
+<Teilnehmer>
+    <Gruppe id="g0">
+        
+        <Gruppenleiter id="p0">
+            <Vorname>David</Vorname>
+            <Nachname>Petersen</Nachname>
+            <Email>spam@spam.com</Email>
+            <Geburtsdatum>
+                <Tag>14</Tag>
+                <Monat>03</Monat>
+                <Jahr>1992</Jahr>
+            </Geburtsdatum>
+            <Erfahrung>Fortgeschrittener</Erfahrung>
+            <Schlagzeug>vorhanden</Schlagzeug>
+            <Anmerkungen>Ich und meine Gruppe, wir sind die Besten!</Anmerkungen>
+        </Gruppenleiter>
+        
+        <Person id="p1">
+            <Vorname>Hannes</Vorname>
+            <Nachname>Horst</Nachname>
+            <Email>spam2@spam.com</Email>
+            <Geburtsdatum>
+                <Tag>21</Tag>
+                <Monat>11</Monat>
+                <Jahr>1991</Jahr>
+            </Geburtsdatum>
+            <Erfahrung>Fortgeschrittener</Erfahrung>
+            <Schlagzeug>vorhanden</Schlagzeug>
+        </Person>
+               
+        <Person id="p2">
+            <!-- ... -->
+        </Person>
+       
+    </Gruppe>
+    
+    <Gruppe id="g1">
+        <!-- ... -->
+    </Gruppe> 
+</Teilnehmer>

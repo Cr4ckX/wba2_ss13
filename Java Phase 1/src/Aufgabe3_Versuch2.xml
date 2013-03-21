@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Rezept>
-    <Schokoladenkuchen>
+<Rezepte>
+    <Schokoladenkuchen id="0">
+    	<Rezeptname>Lenchen’s Schokoladenkuchen</Rezeptname>
         <Zutaten>
           
             <Butter Einheit="g">200</Butter>

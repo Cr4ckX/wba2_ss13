@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Rezept>
+    <Schokoladenkuchen>
+        <Zutaten>
+          
+            <Butter>
+                <Menge>200</Menge>
+                <Einheit>g</Einheit>
+            </Butter>
+            
+            <Zucker>
+                <Menge>200</Menge>
+                <Einheit>g</Einheit>
+            </Zucker>
+            
+            <Schokolade>
+                <Menge>200</Menge>
+                <Einheit>g</Einheit>
+            </Schokolade>
+            
+            <Mehl>
+				<Menge>120</Menge>
+				<Einheit>g</Einheit>
+			</Mehl>
+			
+            <Backpulver>
+				<Menge>0,5</Menge>
+				<Einheit>TL</Einheit>
+			</Backpulver>
+			
+            <Vanillezucker>
+                <Menge>1</Menge>
+                <Einheit>Pkt</Einheit>
+            </Vanillezucker>
+            
+            <Eier>
+                <Menge>4</Menge>
+            </Eier>
+            
+        </Zutaten>
+        
+        <Zubereitung>
+            <Arbeitszeit>ca 1 Std.</Arbeitszeit>
+            <Schwierigkeitsgrad>normal</Schwierigkeitsgrad>
+            <BrennwertpP>295kcal</BrennwertpP>
+            <Beschreibung>
+                Butter und Schokolade im Wasserbad schmelzen. Eier trennen.
+                Eiweiß steif schlagen. Eigelbe, Zucker und Vanillezucker verrühren. 
+                Geschmolzene Butter-Schokomasse hinzufügen und mischen. Mehl mit dem 
+                Backpulver in die Masse sieben und zum Schluss die steifen Eiweiße 
+                vorsichtig unterheben. In eine gut gefettete Form geben. 
+				Bei 180°Grad 40 – 50 Minuten backen.
+			</Beschreibung>
+        </Zubereitung>
+        
+    </Schokoladenkuchen>
+    
+    
+    
+</Rezept>

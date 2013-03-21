@@ -21,7 +21,7 @@
         <Zubereitung>
             <Arbeitszeit Einheit="Std.">ca 1</Arbeitszeit>
             <Schwierigkeitsgrad>normal</Schwierigkeitsgrad>
-            <Brennwert Personen="1", Einheit="kcal">295</Brennwert>
+            <Brennwert Personen="1" Einheit="kcal">295</Brennwert>
             <Beschreibung>
                 Butter und Schokolade im Wasserbad schmelzen. Eier trennen.
                 Eiweiß steif schlagen. Eigelbe, Zucker und Vanillezucker verrühren. 

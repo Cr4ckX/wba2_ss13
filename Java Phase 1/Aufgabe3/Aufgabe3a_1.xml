@@ -1,49 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Rezept>
-    <Schokoladenkuchen id="0">
+<Rezepte>
+    <Rezept id="0">
         <Rezeptname>Lenchen’s Schokoladenkuchen</Rezeptname>
         <Zutaten>
-          
-            <Butter>
+            <Zutat>
+                <Name>Butter</Name>
                 <Menge>200</Menge>
                 <Einheit>g</Einheit>
-            </Butter>
+            </Zutat>
             
-            <Zucker>
+            <Zutat>
+                <Name>Zucker</Name>
                 <Menge>200</Menge>
                 <Einheit>g</Einheit>
-            </Zucker>
+            </Zutat>
             
-            <Schokolade>
+            <Zutat>
+                <Name>Schokolade</Name>
                 <Menge>200</Menge>
                 <Einheit>g</Einheit>
-            </Schokolade>
+            </Zutat>
             
-            <Mehl>
+            <Zutat>
+                <Name>Mehl</Name>
 				<Menge>120</Menge>
 				<Einheit>g</Einheit>
-			</Mehl>
+			</Zutat>
 			
-            <Backpulver>
+            <Zutat>
+                <Name>Backpulver</Name>
 				<Menge>0,5</Menge>
 				<Einheit>TL</Einheit>
-			</Backpulver>
+			</Zutat>
 			
-            <Vanillezucker>
+            <Zutat>
+                <Name>Vanillezucker</Name>
                 <Menge>1</Menge>
                 <Einheit>Pkt</Einheit>
-            </Vanillezucker>
+            </Zutat>
             
-            <Eier>
+            <Zutat>
+                <Name>Eier</Name>
                 <Menge>4</Menge>
-            </Eier>
+                <Einheit>Default</Einheit> 
+            </Zutat>
             
         </Zutaten>
         
         <Zubereitung>
             <Arbeitszeit>ca 1 Std.</Arbeitszeit>
             <Schwierigkeitsgrad>normal</Schwierigkeitsgrad>
-            <BrennwertpP>295kcal</BrennwertpP>
+            
+            <Brennwert>
+                <Personen>1</Personen>
+                <Anzahl>295</Anzahl>
+                <Einheit>kcal</Einheit>
+            </Brennwert>
+            
             <Beschreibung>
                 Butter und Schokolade im Wasserbad schmelzen. Eier trennen.
                 Eiweiß steif schlagen. Eigelbe, Zucker und Vanillezucker verrühren. 
@@ -54,8 +67,8 @@
 			</Beschreibung>
         </Zubereitung>
         
-    </Schokoladenkuchen>
+    </Rezept>
     
     
     
-</Rezept>
+</Rezepte>

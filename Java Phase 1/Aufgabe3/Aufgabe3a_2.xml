@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Rezepte>
-    <Schokoladenkuchen id="0">
-    	<Rezeptname>Lenchen’s Schokoladenkuchen</Rezeptname>
+    <Rezept id="0" name="Lenchen's Schokoladenkuchen">
         <Zutaten>
           
-            <Butter Einheit="g">200</Butter>
+            <Zutat Name="Butter" Einheit="g">200</Zutat>
             
-            <Zucker Einheit="g">200</Zucker>
+            <Zutat Name="Zucker" Einheit="g">200</Zutat>
             
-            <Schokolade Einheit="g">200</Schokolade>
+            <Zutat Name ="Schokolade" Einheit="g">200</Zutat>
             
-            <Mehl Einheit="g">120</Mehl>
+            <Zutat Name ="Mehl" Einheit="g">120</Zutat>
  
-            <Backpulver Einheit="TL">0.5</Backpulver>
+            <Zutat Name ="Backpulver" Einheit="TL">0.5</Zutat>
 
-			<Vanillezucker Einheit="Pkt">1</Vanillezucker>
-          	<Eier>4</Eier>
+			<Zutat Name ="Vanillezucker" Einheit="Pkt">1</Zutat>
+			
+          	<Zutat Name ="Eier" Einheit="Default">4</Zutat>
              
         </Zutaten>
         

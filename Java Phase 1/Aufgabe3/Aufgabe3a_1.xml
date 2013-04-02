@@ -42,13 +42,16 @@
             <Zutat>
                 <Name>Eier</Name>
                 <Menge>4</Menge>
-                <Einheit>Default</Einheit> 
+                <Einheit>default</Einheit> 
             </Zutat>
             
         </Zutaten>
         
         <Zubereitung>
-            <Arbeitszeit>ca 1 Std.</Arbeitszeit>
+            <Arbeitszeit>
+                <Zeit>1</Zeit>
+                <Einheit>Std.</Einheit>
+            </Arbeitszeit>
             <Schwierigkeitsgrad>normal</Schwierigkeitsgrad>
             
             <Brennwert>

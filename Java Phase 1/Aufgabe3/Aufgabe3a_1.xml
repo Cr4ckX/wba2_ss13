@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Rezepte>
+<Rezepte xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="Aufgabe3d.xsd">
     <Rezept id="0">
         <Rezeptname>Lenchen’s Schokoladenkuchen</Rezeptname>
         <Zutaten>

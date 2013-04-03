@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hierbei handelt es sich um die XML-Datei, welche gegen das erstelle Schema geprüft wird.-->
+<Rezepte xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="Aufgabe3d_1.xsd">
+    <Rezept id="1">
+        <Rezeptname>Mein Lieblingsgericht</Rezeptname>
+        <Zutaten>
+            <Zutat>
+                <Name>Mandeln</Name>
+                <Menge>500</Menge>
+                <Einheit>g</Einheit>
+            </Zutat>
+            <Zutat>
+                <Name>Mehl</Name>
+                <Menge>1</Menge>
+                <Einheit>kg</Einheit>
+            </Zutat>
+        </Zutaten>
+        <Zubereitung>
+            <Arbeitszeit>
+                <Zeit>3</Zeit>
+                <Einheit>Std.</Einheit>
+            </Arbeitszeit>
+            <Schwierigkeitsgrad>schwer</Schwierigkeitsgrad>
+            <Brennwert>
+                <Personen>1</Personen>
+                <Anzahl>3000</Anzahl>
+                <Einheit>kcal</Einheit>
+            </Brennwert>
+            <Beschreibung>Alle Zutaten mischen. Fertig!</Beschreibung>
+        </Zubereitung>
+    </Rezept>
+    
+    <Rezept id="2">
+        <Rezeptname>Mein zweites Lieblingsgericht</Rezeptname>
+        <Zutaten>
+            <Zutat>
+                <Name>Eier</Name>
+                <Menge>12</Menge>
+                <Einheit>default</Einheit>
+            </Zutat>
+        </Zutaten>
+        <Zubereitung>
+            <Arbeitszeit>
+                <Zeit>10</Zeit>
+                <Einheit>Min.</Einheit>
+            </Arbeitszeit>
+            <Schwierigkeitsgrad>leicht</Schwierigkeitsgrad>
+            <Brennwert>
+                <Personen>2</Personen>
+                <Anzahl>300</Anzahl>
+                <Einheit>kcal</Einheit>
+            </Brennwert>
+            <Beschreibung>Eier bleiben wie sie sind.</Beschreibung>
+        </Zubereitung>
+    </Rezept>
+</Rezepte>

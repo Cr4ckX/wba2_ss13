@@ -7,29 +7,21 @@
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="Rezeptname" type="xs:string"/>
-                            <xs:element name="Zutaten">
-                                <xs:complexType>
+                            <xs:element name="Zutaten">                               
+                                <xs:complexType>    
                                     <xs:sequence>
-                                        <xs:element name="Zutat" minOccurs="1" maxOccurs="unbounded">
+                                        <xs:element name="Zutat" minOccurs="1" maxOccurs="unbounded">   
                                             <xs:complexType>
                                                 <xs:sequence>
                                                     <xs:element name="Name" type="xs:string"/>
                                                     <xs:element name="Menge" type="noZero"/>
                                                     <xs:element name="Einheit" type="xs:string"/>
-                                                    
-                                                    <!-- Integer not 0 -->
-                                                    
-                                                    <xs:simpleType name="noZero">
-                                                        <xs:restriction base="xs:integer">
-                                                            <xs:minExclusive value="0"/>
-                                                        </xs:restriction>    
-                                                    </xs:simpleType>
-                                                    
                                                 </xs:sequence>
                                             </xs:complexType>
                                         </xs:element>
                                     </xs:sequence>
                                 </xs:complexType>
+                            </xs:element>
                             <xs:element name="Zubereitung">
                                 <xs:complexType>
                                     <xs:sequence>
@@ -38,33 +30,10 @@
                                                 <xs:sequence>
                                                     <xs:element name="Zeit" type="noZero"/>
                                                     <xs:element name="Einheit" type="xs:string"/> <!-- oder type="ArbeitszeitEinheit" -->
-                                                    
-                                                    <!-- Selbst definierter Datentyp - Beispiel, jedoch nicht fest implementiert-->
-                                                    
-                                                    <xs:simpleType name="ArbeitszeitEinheit">
-                                                        <xs:restriction base="xs:string">
-                                                            <xs:enumeration value="Min."/>
-                                                            <xs:enumeration value="Std."/>
-                                                            <xs:enumeration value="Tag(e)"/>
-                                                        </xs:restriction>
-                                                    </xs:simpleType>
-                                                    
-                                                    
                                                 </xs:sequence>
                                             </xs:complexType>
                                         </xs:element>
                                         <xs:element name="Schwierigkeitsgrad" type="Schwierigkeit" default="normal"/>
-                                        
-                                        <!-- Selbst definierter Datentyp - diesmal implementiert -->
-                                                    
-                                        <xs:simpleType name="Schwierigkeit">
-                                            <xs:restriction base="xs:string">
-                                                <xs:enumeration value="leicht"/>
-                                                <xs:enumeration value="normal"/>
-                                                <xs:enumeration value="schwer"/>
-                                            </xs:restriction>
-                                        </xs:simpleType>    
-                                        
                                         <xs:element name="Brennwert">
                                             <xs:complexType>
                                                 <xs:sequence>
@@ -85,4 +54,33 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+    
+    <!-- Integer not 0  -->                                                 
+    <xs:simpleType name="noZero">
+        <xs:restriction base="xs:decimal">
+            <xs:minExclusive value="0"/>
+        </xs:restriction>    
+    </xs:simpleType>
+    
+    <!-- Selbst definierter Datentyp - Beispiel, jedoch nicht fest implementiert-->
+    
+    <xs:simpleType name="ArbeitszeitEinheit">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Min."/>
+            <xs:enumeration value="Std."/>
+            <xs:enumeration value="Tag(e)"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    
+    <!-- Selbst definierter Datentyp - diesmal implementiert -->
+    
+    <xs:simpleType name="Schwierigkeit">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="leicht"/>
+            <xs:enumeration value="normal"/>
+            <xs:enumeration value="schwer"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
 </xs:schema>

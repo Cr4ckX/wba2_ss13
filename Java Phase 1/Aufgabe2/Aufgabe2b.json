@@ -3,16 +3,18 @@
 	{
 	    "Gruppe":
 	    {
+	        "id":"g0",
 	        "Gruppenleiter":
 	        {
+	            "id":"p0",
 	            "Vorname":"David",
 	            "Nachname":"Petersen",
 	            "Email":"spam@spam.com",
 	            "Geburtsdatum":
 	            {
-	                "Tag":"14",
-	                "Monat":"03",
-	                "Jahr":"1992"            
+	                "Tag":14,
+	                "Monat":03,
+	                "Jahr":1992            
 	            },
 	            "Erfahrung":"Fortgeschrittener",
 	            "Schlagzeug":"Vorhanden",
@@ -21,21 +23,23 @@
 	        
 	        "Person":
 	        {
-	        "Vorname":"Hannes",
-            "Nachname":"Horst",
-            "Email":"spam2@spam.com",
-            "Geburtsdatum":
-            {
-                "Tag":"21",
-                "Monat":"11",
-                "Jahr":"1991"
-            },
-            "Erfahrung":"Fortgeschrittener",
-            "Schlagzeug":"vorhanden"
-	        },
+	            "id":"p1",
+    	        "Vorname":"Hannes",
+                "Nachname":"Horst",
+                "Email":"spam2@spam.com",
+                "Geburtsdatum":
+                {
+                     "Tag":21,
+                     "Monat":11,
+                     "Jahr":1991
+                },
+                "Erfahrung":"Fortgeschrittener",
+                "Schlagzeug":"vorhanden"
+    	        },
 	        
 	        "Person":
 	        {
+	            "id":"p2",
 	            #...
 	        }
 	        
@@ -43,6 +47,7 @@
 	    
 	    "Gruppe":
 	    {
+	        "id":"g1",
 	        #...
 	    }
 	    

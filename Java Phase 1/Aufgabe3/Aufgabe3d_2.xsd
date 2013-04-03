@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- Übersichtlicheres, aufgeteiltes Schema -->
+    
+    <!--Simple Elements -->
+    <xs:element name="Rezeptname" type="xs:string"/>
+    <xs:element name="Name" type="xs:string"/>
+    <xs:element name="Menge" type="noZero"/>
+    <xs:element name="EinheitZutat" type="xs:string"/>
+    <xs:element name="Zeit" type="noZero"/>
+    <xs:element name="EinheitArbeitszeit" type="xs:string"/> <!-- oder type="ArbeitszeitEinheit" -->
+    <xs:element name="Schwierigkeitsgrad" type="Schwierigkeit" default="normal"/>
+    <xs:element name="Personen" type="noZero" default="1"/>
+    <xs:element name="Anzahl" type="noZero"/>
+    <xs:element name="EinheitBrennwert" type="xs:string" default="kcal"/>
+    <xs:element name="Beschreibung" type="xs:string"/>
+    
+    <!-- Attribute -->
+    <xs:attribute name="id" type="xs:integer"/>
+    
+    <!-- Complex Elements -->
+    <xs:element name="Zutat">   
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Name"/>
+                <xs:element ref="Menge"/>
+                <xs:element ref="EinheitZutat"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+        
+        
+    <xs:element name="Arbeitszeit">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Zeit"/>
+                <xs:element ref="EinheitArbeitszeit"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="Brennwert">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Personen"/>
+                <xs:element ref="Anzahl"/>
+                <xs:element ref="EinheitBrennwert"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="Zubereitung">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Arbeitszeit"/>
+                <xs:element ref="Schwierigkeitsgrad"/>
+                <xs:element ref="Brennwert"/>
+                <xs:element ref="Beschreibung"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Zutaten">                               
+        <xs:complexType>    
+            <xs:sequence>
+                <xs:element ref="Zutat" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+                    
+                              
+    <xs:element name="Rezept">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Rezeptname"/>
+                <xs:element ref="Zutaten"/>
+                <xs:element ref="Zubereitung"/>
+            </xs:sequence>
+            <xs:attribute ref="id" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="Rezepte">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Rezept" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Datatypes -->
+    
+    <!-- Integer not 0  -->                                                 
+    <xs:simpleType name="noZero">
+        <xs:restriction base="xs:decimal">
+            <xs:minExclusive value="0"/>
+        </xs:restriction>    
+    </xs:simpleType>
+    
+    <!-- Selbst definierter Datentyp - Beispiel, jedoch nicht fest implementiert-->
+    
+    <xs:simpleType name="ArbeitszeitEinheit">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Min."/>
+            <xs:enumeration value="Std."/>
+            <xs:enumeration value="Tag(e)"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    
+    <!-- Selbst definierter Datentyp - diesmal implementiert -->
+    
+    <xs:simpleType name="Schwierigkeit">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="leicht"/>
+            <xs:enumeration value="normal"/>
+            <xs:enumeration value="schwer"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema> 

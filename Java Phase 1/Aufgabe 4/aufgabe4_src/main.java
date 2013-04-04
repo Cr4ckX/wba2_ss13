@@ -5,7 +5,13 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 import JavaGenerated.*;
 import aufgabe4_src.Rezepte.Rezept;
-
+/**
+ * 
+ * @author CrackX
+ * Liest festgelegte XML-Datei ein und gibt die beinhalteten Informationen angepasst an dem XML-Schema
+ * aus Aufgabe 3 aus.
+ *
+ */
 public class main {
 
   public static void main(String[] args) throws Exception {
@@ -18,15 +24,19 @@ public class main {
     	
       if (r.getRezept().get(i) instanceof Rezept){
         Rezept re = (Rezept) r.getRezept().get(i);
-        System.out.println("Rezeptname: " + re.getRezeptname());//.getZubereitung());//.getRezeptname());
+        System.out.println("Rezeptname: " + re.getRezeptname() + "\r\n");
         
         System.out.println("Zutaten:");
         for (int j = 0; j < re.getZutaten().zutat.size(); j++){
-        	System.out.println(re.getZutaten().zutat.get(j).menge + re.getZutaten().zutat.get(j).einheit
+        	System.out.println(re.getZutaten().zutat.get(j).menge + re.getZutaten().zutat.get(j).einheit.replace("default", "")
         			+ " " + re.getZutaten().zutat.get(j).name);
         }
-        
-        System.out.println("Beschreibung: " + re.getZubereitung().beschreibung);
+        System.out.println("\r\n" + "Zubereitung: ");
+        System.out.println("Arbeitszeit: " + re.getZubereitung().arbeitszeit.zeit + " " +
+        		re.getZubereitung().arbeitszeit.einheit);
+        System.out.println("Schwierigkeitsgrad: " + re.getZubereitung().schwierigkeitsgrad.toString().toLowerCase());
+        System.out.println("Beschreibung: " + re.getZubereitung().beschreibung + "\r\n" + "\r\n"
+        		+ "------------------------------------------------------" + "\r\n");
       }
     }
     

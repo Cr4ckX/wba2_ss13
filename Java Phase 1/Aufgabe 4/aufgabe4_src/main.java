@@ -1,46 +1,60 @@
 package aufgabe4_src;
 
-import java.io.File;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Unmarshaller;
-import aufgabe4_src.Rezepte.Rezept;
+import java.util.Scanner;
+
 /**
  * 
- * @author CrackX
- * Liest festgelegte XML-Datei ein und gibt die beinhalteten Informationen angepasst an dem XML-Schema
- * aus Aufgabe 3 aus.
- *
+ * @author CrackX Liest festgelegte XML-Datei ein und gibt die beinhalteten
+ *         Informationen angepasst an dem XML-Schema aus Aufgabe 3 aus.
+ * 
  */
 public class main {
 
-  public static void main(String[] args) throws Exception {
-    JAXBContext jc = JAXBContext.newInstance("aufgabe4_src");
-    Unmarshaller unmarshaller = jc.createUnmarshaller();
+	public static void main(String[] args) throws Exception {
 
-    Rezepte r = (Rezepte) unmarshaller.unmarshal(new File("Aufgabe 4/aufgabe4_src/Aufgabe3d.xml"));
+		XmlVerarbeiten verarbeiten = new XmlVerarbeiten();
+		Scanner sc = new Scanner(System.in);
+		int anzahlRezepte = verarbeiten.getAnzahlRezepte();
+		int auswahl;
+		String kommentar;
 
-    for (int i = 0; i < r.getRezept().size(); i++) {
-    	
-      if (r.getRezept().get(i) instanceof Rezept){
-        Rezept re = (Rezept) r.getRezept().get(i);
-        System.out.println("Rezept Nummer: " + re.getId()); 
-        System.out.println("Rezeptname: " + re.getRezeptname() + "\r\n");
-        
-        System.out.println("Zutaten:");
-        for (int j = 0; j < re.getZutaten().zutat.size(); j++){
-        	System.out.println(re.getZutaten().zutat.get(j).menge + re.getZutaten().zutat.get(j).einheit.replace("default", "")
-        			+ " " + re.getZutaten().zutat.get(j).name);
-        }
-        System.out.println("\r\n" + "Zubereitung: ");
-        System.out.println("Arbeitszeit: " + re.getZubereitung().arbeitszeit.zeit + " " +
-        		re.getZubereitung().arbeitszeit.einheit);
-        System.out.println("Schwierigkeitsgrad: " + re.getZubereitung().schwierigkeitsgrad.toString().toLowerCase());
-        System.out.println("Beschreibung: " + re.getZubereitung().beschreibung + "\r\n" + "\r\n"
-        		+ "------------------------------------------------------" + "\r\n");
-        
+		System.out.println("Die ausgelesene Datei enthŠlt " + anzahlRezepte
+				+ " Rezept(e)." + " Wie mšchten Sie vorgehen?" + "\r\n");
 
-      }
-    }
-    
-  }
+		System.out.println("1. Rezept(e) anschauen.");
+		System.out.println("2. Rezept mit Kommentar versehen.");
+		System.out.print("\r\n");
+		System.out
+				.print("WŠhlen Sie 1 oder 2 aus, indem sie die Zahl eingeben: ");
+		auswahl = sc.nextInt();
+
+		System.out
+				.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - -"
+						+ "\r\n");
+		switch (auswahl) {
+
+		case 1:
+			verarbeiten.xmlausgabe();
+			break;
+
+		case 2:
+			System.out
+					.println("Welches Rezept soll mit einem Kommentar versehen werden?"
+							+ "\r\n");
+			for (int i = 0; i < anzahlRezepte; i++) {
+				System.out.println(verarbeiten.getRezeptName(i) + "\r\n");
+			}
+			System.out.print("Bitte wŠhlen: ");
+			auswahl = sc.nextInt();
+			sc.nextLine(); //EOL wird 'entfernt'
+
+			System.out.println("Bitte Kommentar fŸr Rezept hier hinzufŸgen:");
+			kommentar = sc.nextLine();
+			
+		
+			verarbeiten.addKommentar(auswahl, kommentar);
+			break;
+		}
+
+	}
 }

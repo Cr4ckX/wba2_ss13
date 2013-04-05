@@ -2,6 +2,12 @@
 <classpath>
 	<classpathentry kind="src" path="Aufgabe2"/>
 	<classpathentry kind="src" path="Aufgabe3"/>
+	<classpathentry kind="src" path="Aufgabe 4"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="/Users/CrackX/Box Documents/Studium/Unterlagen/Semester 4/WBA2/Phase 1 Workspace/wba2_ss13/Java Phase 1/jaxb-ri-2.2.6 2/lib/jaxb-xjc-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Users/CrackX/Box Documents/Studium/Unterlagen/Semester 4/WBA2/Phase 1 Workspace/wba2_ss13/Java Phase 1/jaxb-ri-2.2.6 2/lib/jaxb-impl-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Users/CrackX/Box Documents/Studium/Unterlagen/Semester 4/WBA2/Phase 1 Workspace/wba2_ss13/Java Phase 1/jaxb-ri-2.2.6 2/lib/jaxb-xjc.jar"/>
+	<classpathentry kind="lib" path="/Users/CrackX/Box Documents/Studium/Unterlagen/Semester 4/WBA2/Phase 1 Workspace/wba2_ss13/Java Phase 1/jaxb-ri-2.2.6 2/lib/jaxb-api.jar"/>
+	<classpathentry kind="lib" path="/Users/CrackX/Box Documents/Studium/Unterlagen/Semester 4/WBA2/Phase 1 Workspace/wba2_ss13/Java Phase 1/jaxb-ri-2.2.6 2/lib/jaxb-impl.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

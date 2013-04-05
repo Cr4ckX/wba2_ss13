@@ -3,7 +3,6 @@ package aufgabe4_src;
 import java.io.File;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
-import JavaGenerated.*;
 import aufgabe4_src.Rezepte.Rezept;
 /**
  * 
@@ -24,6 +23,7 @@ public class main {
     	
       if (r.getRezept().get(i) instanceof Rezept){
         Rezept re = (Rezept) r.getRezept().get(i);
+        System.out.println("Rezept Nummer: " + re.getId()); 
         System.out.println("Rezeptname: " + re.getRezeptname() + "\r\n");
         
         System.out.println("Zutaten:");
@@ -37,6 +37,8 @@ public class main {
         System.out.println("Schwierigkeitsgrad: " + re.getZubereitung().schwierigkeitsgrad.toString().toLowerCase());
         System.out.println("Beschreibung: " + re.getZubereitung().beschreibung + "\r\n" + "\r\n"
         		+ "------------------------------------------------------" + "\r\n");
+        
+
       }
     }
     

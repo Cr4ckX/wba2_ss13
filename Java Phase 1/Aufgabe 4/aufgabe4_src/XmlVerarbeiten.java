@@ -126,16 +126,17 @@ public class XmlVerarbeiten {
 		        k.setNutzer(Nutzername);
 		        k.setDatum(d);
 		        k.setUhrzeit(u);
-		     //   k.setInhalt(Nutzername);
 		        k.setInhalt(kommentar);
 		        
 		        re.getKommentare().getKommentar().add(k); 
 
-		        //Jetzt wieder Marshallen!!
+		        //Jetzt wieder Marshallen
 		        Marshaller marshaller = jc.createMarshaller();
 		        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-		        marshaller.marshal(r, System.out);
+		        //Sicherheitshalber neue Datei erstellt
+		        marshaller.marshal(r, new File("Aufgabe 4/aufgabe4_src/Aufgabe3dgenerated.xml"));
 		        
+		        //Nochmal Test ob alles geklappt hat
 		        System.out.println("Kommentar: " + re.getKommentare().getKommentar().get(
 		        		re.getKommentare().kommentar.size()-1).inhalt);
 		      

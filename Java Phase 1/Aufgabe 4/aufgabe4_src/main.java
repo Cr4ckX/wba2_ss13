@@ -40,8 +40,7 @@ public class main {
 			break;
 
 		case 2:
-			System.out
-					.println("Welches Rezept soll mit einem Kommentar versehen werden?"
+			System.out.println("Welches Rezept soll mit einem Kommentar versehen werden?"
 							+ "\r\n");
 			for (int i = 0; i < anzahlRezepte; i++) {
 				System.out.println(verarbeiten.getRezeptName(i) + "\r\n");

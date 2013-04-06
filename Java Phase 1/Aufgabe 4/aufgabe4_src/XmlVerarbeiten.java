@@ -8,6 +8,11 @@ import new_generated_classes.Rezepte.Rezept.Kommentare.Kommentar.Uhrzeit;
 
 import java.io.File;
 import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 
 import javax.xml.bind.Binder;
@@ -106,21 +111,47 @@ public class XmlVerarbeiten {
 		
 	}
 
+
 	public void addKommentar(int rezeptid, String Nutzername, String kommentar) throws Exception{
 
+        Date date = new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        
+        java.text.SimpleDateFormat dateFormat = new java.text.SimpleDateFormat("MM");
+       
+        
+        int minutesint = cal.get(Calendar.MINUTE);
+        BigInteger minutes = BigInteger.valueOf(minutesint);
+        
+        int hoursint = cal.get(Calendar.HOUR_OF_DAY);
+        BigInteger stunden = BigInteger.valueOf(hoursint);
+             
+        int dayint = cal.get(Calendar.DAY_OF_MONTH);
+        BigInteger tag = BigInteger.valueOf(dayint);
+        
+        Integer monthint = new Integer(dateFormat.format(cal.getTime()));
+        BigInteger monat = BigInteger.valueOf(monthint);
+        
+        int yearint = cal.get(Calendar.YEAR);
+        BigInteger jahr = BigInteger.valueOf(yearint);
+        
+
+        
+        
 			//array beginnt bei 0!
 	      if (r.getRezept().get(rezeptid-1) instanceof Rezept){
 		        Rezept re = (Rezept) r.getRezept().get(rezeptid-1);
 		        Kommentar k = new Kommentar();
 		        
 		        Uhrzeit u = new Uhrzeit();
-		        u.setMinute(null);
-		        u.setStunde(null);
+		        u.setMinute(minutes);
+		        u.setStunde(stunden);
 		        
 		        Datum d = new Datum();
-		        d.setJahr(null);
-		        d.setMonat(null);
-		        d.setTag(null);
+		        d.setTag(tag);
+		        d.setMonat(monat);
+		        d.setJahr(jahr);
 		        
 		        k.setId(null);
 		        k.setNutzer(Nutzername);
@@ -133,14 +164,18 @@ public class XmlVerarbeiten {
 		        //Jetzt wieder Marshallen
 		        Marshaller marshaller = jc.createMarshaller();
 		        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+		        
 		        //Sicherheitshalber neue Datei erstellt
-		        marshaller.marshal(r, new File("Aufgabe 4/aufgabe4_src/Aufgabe3dgenerated.xml"));
+		        //marshaller.marshal(r, new File("Aufgabe 4/aufgabe4_src/Aufgabe3dgenerated.xml"));
+		        marshaller.marshal(r, System.out);
 		        
 		        //Nochmal Test ob alles geklappt hat
 		        System.out.println("Kommentar: " + re.getKommentare().getKommentar().get(
 		        		re.getKommentare().kommentar.size()-1).inhalt);
 		      
 	      
+
+
 		 }        
 	}	
 }

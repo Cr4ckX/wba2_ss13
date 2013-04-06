@@ -57,7 +57,6 @@ public class main {
 			System.out.println("Bitte Kommentar für Rezept hier hinzufügen:");
 			kommentar = sc.nextLine();
 
-			System.out.println(kommentar);
 			verarbeiten.addKommentar(auswahl, nutzername, kommentar);
 			break;
 			

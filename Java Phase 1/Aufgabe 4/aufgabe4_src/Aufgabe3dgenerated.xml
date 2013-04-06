@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Rezepte>
+    <Rezept id="1">
+        <Rezeptname>Mein Lieblingsgericht</Rezeptname>
+        <Zutaten>
+            <Zutat>
+                <Name>Mandeln</Name>
+                <Menge>500</Menge>
+                <Einheit>g</Einheit>
+            </Zutat>
+            <Zutat>
+                <Name>Mehl</Name>
+                <Menge>1</Menge>
+                <Einheit>kg</Einheit>
+            </Zutat>
+        </Zutaten>
+        <Zubereitung>
+            <Arbeitszeit>
+                <Zeit>3</Zeit>
+                <Einheit>Std.</Einheit>
+            </Arbeitszeit>
+            <Schwierigkeitsgrad>schwer</Schwierigkeitsgrad>
+            <Brennwert>
+                <Personen>1</Personen>
+                <Anzahl>3000</Anzahl>
+                <Einheit>kcal</Einheit>
+            </Brennwert>
+            <Beschreibung>Alle Zutaten mischen. Fertig!</Beschreibung>
+        </Zubereitung>
+        <Kommentare>
+            <Kommentar id="1">
+                <Nutzer>Ich</Nutzer>
+                <Datum>
+                    <Tag>1</Tag>
+                    <Monat>4</Monat>
+                    <Jahr>2013</Jahr>
+                </Datum>
+                <Uhrzeit>
+                    <Stunde>12</Stunde>
+                    <Minute>30</Minute>
+                </Uhrzeit>
+                <Inhalt>Schönes Rezept!</Inhalt>
+            </Kommentar>
+        </Kommentare>
+    </Rezept>
+    <Rezept id="2">
+        <Rezeptname>Mein zweites Lieblingsgericht</Rezeptname>
+        <Zutaten>
+            <Zutat>
+                <Name>Eier</Name>
+                <Menge>12</Menge>
+                <Einheit>default</Einheit>
+            </Zutat>
+        </Zutaten>
+        <Zubereitung>
+            <Arbeitszeit>
+                <Zeit>10</Zeit>
+                <Einheit>Min.</Einheit>
+            </Arbeitszeit>
+            <Schwierigkeitsgrad>leicht</Schwierigkeitsgrad>
+            <Brennwert>
+                <Personen>2</Personen>
+                <Anzahl>300</Anzahl>
+                <Einheit>kcal</Einheit>
+            </Brennwert>
+            <Beschreibung>Eier bleiben wie sie sind.</Beschreibung>
+        </Zubereitung>
+        <Kommentare>
+            <Kommentar id="1">
+                <Nutzer>Ich</Nutzer>
+                <Datum>
+                    <Tag>1</Tag>
+                    <Monat>4</Monat>
+                    <Jahr>2013</Jahr>
+                </Datum>
+                <Uhrzeit>
+                    <Stunde>12</Stunde>
+                    <Minute>35</Minute>
+                </Uhrzeit>
+                <Inhalt>Auch ein sehr schönes Rezept!</Inhalt>
+            </Kommentar>
+            <Kommentar>
+                <Nutzer>Dave</Nutzer>
+                <Datum/>
+                <Uhrzeit/>
+                <Inhalt>Testkommi :)</Inhalt>
+            </Kommentar>
+        </Kommentare>
+    </Rezept>
+</Rezepte>

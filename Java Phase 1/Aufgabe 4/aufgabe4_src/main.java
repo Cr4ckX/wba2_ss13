@@ -51,12 +51,13 @@ public class main {
 			sc.nextLine(); //EOL wird 'entfernt'
 
 			System.out.print("Bitte geben Sie ihren Nutzernamen an: ");
-			nutzername = sc.next();
+			nutzername = sc.nextLine();
+
 			
 			System.out.println("Bitte Kommentar für Rezept hier hinzufügen:");
 			kommentar = sc.nextLine();
-			sc.nextLine(); //EOL wird 'entfernt'
-		
+
+			System.out.println(kommentar);
 			verarbeiten.addKommentar(auswahl, nutzername, kommentar);
 			break;
 			

@@ -13,6 +13,7 @@ import java.math.BigDecimal;
 import javax.xml.bind.Binder;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
+import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.PropertyException;
 import javax.xml.bind.Unmarshaller;
@@ -105,7 +106,7 @@ public class XmlVerarbeiten {
 		
 	}
 
-	public void addKommentar(int rezeptid, String Nutzername, String kommentar){
+	public void addKommentar(int rezeptid, String Nutzername, String kommentar) throws Exception{
 
 			//array beginnt bei 0!
 	      if (r.getRezept().get(rezeptid-1) instanceof Rezept){
@@ -123,17 +124,22 @@ public class XmlVerarbeiten {
 		        
 		        k.setId(null);
 		        k.setNutzer(Nutzername);
+		        k.setDatum(d);
 		        k.setUhrzeit(u);
+		     //   k.setInhalt(Nutzername);
 		        k.setInhalt(kommentar);
 		        
 		        re.getKommentare().getKommentar().add(k); 
 
 		        //Jetzt wieder Marshallen!!
+		        Marshaller marshaller = jc.createMarshaller();
+		        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+		        marshaller.marshal(r, System.out);
+		        
 		        System.out.println("Kommentar: " + re.getKommentare().getKommentar().get(
 		        		re.getKommentare().kommentar.size()-1).inhalt);
 		      
 	      
 		 }        
-	    //  r.getRezept().get(rezeptid).getKommentare().kommentar.toString();
 	}	
 }

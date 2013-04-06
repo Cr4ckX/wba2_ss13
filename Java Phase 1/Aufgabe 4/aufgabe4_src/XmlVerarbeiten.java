@@ -1,9 +1,13 @@
 package aufgabe4_src;
 
-import generated_classes.Rezepte;
-import generated_classes.Rezepte.Rezept;
+import new_generated_classes.Rezepte;
+import new_generated_classes.Rezepte.Rezept;
+import new_generated_classes.Rezepte.Rezept.Kommentare.Kommentar;
+import new_generated_classes.Rezepte.Rezept.Kommentare.Kommentar.Datum;
+import new_generated_classes.Rezepte.Rezept.Kommentare.Kommentar.Uhrzeit;
 
 import java.io.File;
+import java.math.BigDecimal;
 
 
 import javax.xml.bind.Binder;
@@ -37,7 +41,7 @@ public class XmlVerarbeiten {
 	
 	
 	public XmlVerarbeiten() throws Exception{
-		jc = JAXBContext.newInstance("generated_classes");
+		jc = JAXBContext.newInstance("new_generated_classes");
 	    unmarshaller = jc.createUnmarshaller();
 	    r = (Rezepte) unmarshaller.unmarshal(new File("Aufgabe 4/aufgabe4_src/Aufgabe3d.xml"));
 
@@ -63,9 +67,22 @@ public class XmlVerarbeiten {
 	        System.out.println("\r\n" + "Zubereitung: ");
 	        System.out.println("Arbeitszeit: " + re.getZubereitung().arbeitszeit.zeit + " " +
 	        		re.getZubereitung().arbeitszeit.einheit);
+	        System.out.println("Brennwert: " + re.getZubereitung().getBrennwert().anzahl + 
+	        		" " + re.getZubereitung().getBrennwert().einheit + " für " + re.getZubereitung()
+	        		.getBrennwert().personen + " Person(en)");
+	        		
 	        System.out.println("Schwierigkeitsgrad: " + re.getZubereitung().schwierigkeitsgrad.toString().toLowerCase());
-	        System.out.println("Beschreibung: " + re.getZubereitung().beschreibung + "\r\n" + "\r\n"
-	        		+ "------------------------------------------------------" + "\r\n");
+	        System.out.println("Beschreibung: " + re.getZubereitung().beschreibung + "\r\n");
+	        
+	        System.out.println("Kommentare:");
+	        for (int k = 0; k < re.getKommentare().kommentar.size(); k++){
+	        	Kommentar ko = (Kommentar) re.getKommentare().getKommentar().get(k);
+	        	System.out.println(ko.nutzer + " schrieb am " + ko.datum.getTag() + "." +
+	        			ko.datum.getMonat() + "." + ko.datum.getJahr() + ": " +
+	        			ko.inhalt + "\r\n");		
+	        }
+	        System.out.println("------------------------------------------------------" + "\r\n");
+	           
 
 	      }
 	    }
@@ -87,34 +104,32 @@ public class XmlVerarbeiten {
 		return "Fehler aufgetreten. Bitte Programm beenden.";
 		
 	}
-/*	
-	public void addKommentar(int rezeptid, String kommentar) throws Exception{
-		
-//		JAXBContext context = JAXBContext.newInstance(Rezepte.class);
-//		Marshaller marshaller = context.createMarshaller();
-//		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-//		marshaller.setProperty("com.sun.xml.internal.bind.xmlHeaders", "<!-- " + kommentar + " -->");
-//	//	JAXBElement doc = (JAXBElement) unmarshaller.unmarshal(new File("Aufgabe 4/aufgabe4_src/Aufgabe3d.xml"));
-//		marshaller.marshal(rezeptid, System.out);
-		
-		final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		final DocumentBuilder builder = factory.newDocumentBuilder();
-		final Document doc = builder.getDOMImplementation().createDocument(null, null, null);
 
+	public void addKommentar(BigDecimal rezeptid, String Nutzername, String kommentar){
 
-		final Binder<Node> binder = jc.createBinder();
-		binder.marshal(r, doc);
-		final Comment comment = doc.createComment(kommentar);
-		doc.appendChild(comment);
+	   //   if (r.getRezept().get(rezeptid.intValue()) instanceof Rezept){
+		       Rezept re = (Rezept) r.getRezept().get(rezeptid.intValue());
+		       // Kommentar k = new Kommentar();
+		        
+//		        Uhrzeit u = new Uhrzeit();
+//		        u.setMinute(null);
+//		        u.setStunde(null);
+//		        
+//		        Datum d = new Datum();
+//		        d.setJahr(null);
+//		        d.setMonat(null);
+//		        d.setTag(null);
+//		        
+//		        k.setId(null);
+//		        k.setNutzer(Nutzername);
+//		        k.setUhrzeit(u);
+//		        k.setInhalt(kommentar);
+//		     
+//		        re.getKommentare().getKommentar().add(k);
+	//	        System.out.println(re.getKommentare().getKommentar().get(3).inhalt);
+		      
+	      
 
-		final DOMSource domSource = new DOMSource(doc);
-		
-		// use System.out for testing
-		final StreamResult streamResult = new StreamResult(System.out);
-		final TransformerFactory tf = TransformerFactory.newInstance();
-		final Transformer serializer = tf.newTransformer();
-		serializer.transform(domSource, streamResult);
-	}
-	
-	*/
+	      //r.getRezept().get(rezeptid).getKommentare().kommentar.toString();
+	}	
 }

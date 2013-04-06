@@ -1,5 +1,6 @@
 package aufgabe4_src;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 /**
@@ -17,6 +18,8 @@ public class main {
 		int anzahlRezepte = verarbeiten.getAnzahlRezepte();
 		int auswahl;
 		String kommentar;
+		String nutzername;
+		BigDecimal auswahl2;
 
 		System.out.println("Die ausgelesene Datei enthält " + anzahlRezepte
 				+ " Rezept(e)." + " Wie möchten Sie vorgehen?" + "\r\n");
@@ -45,15 +48,21 @@ public class main {
 				System.out.println(verarbeiten.getRezeptName(i) + "\r\n");
 			}
 			System.out.print("Bitte wählen: ");
-			auswahl = sc.nextInt();
-			sc.nextLine(); //EOL wird 'entfernt'
+//			auswahl = sc.nextInt();
+			auswahl2 = sc.nextBigDecimal();
+//			sc.nextLine(); //EOL wird 'entfernt'
 
+			System.out.print("Bitte geben Sie ihren Nutzernamen an: ");
+			nutzername = sc.next();
+			
 			System.out.println("Bitte Kommentar für Rezept hier hinzufügen:");
 			kommentar = sc.nextLine();
-			
+			sc.nextLine(); //EOL wird 'entfernt'
 		
-			//verarbeiten.addKommentar(auswahl, kommentar);
+			verarbeiten.addKommentar(auswahl2, nutzername, kommentar);
 			break;
+			
+			
 		}
 
 	}

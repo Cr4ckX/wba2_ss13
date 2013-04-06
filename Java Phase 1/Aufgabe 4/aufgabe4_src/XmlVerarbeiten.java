@@ -105,31 +105,35 @@ public class XmlVerarbeiten {
 		
 	}
 
-	public void addKommentar(BigDecimal rezeptid, String Nutzername, String kommentar){
+	public void addKommentar(int rezeptid, String Nutzername, String kommentar){
 
-	   //   if (r.getRezept().get(rezeptid.intValue()) instanceof Rezept){
-		       Rezept re = (Rezept) r.getRezept().get(rezeptid.intValue());
-		       // Kommentar k = new Kommentar();
+			//array beginnt bei 0!
+	      if (r.getRezept().get(rezeptid-1) instanceof Rezept){
+		        Rezept re = (Rezept) r.getRezept().get(rezeptid-1);
+		        Kommentar k = new Kommentar();
 		        
-//		        Uhrzeit u = new Uhrzeit();
-//		        u.setMinute(null);
-//		        u.setStunde(null);
-//		        
-//		        Datum d = new Datum();
-//		        d.setJahr(null);
-//		        d.setMonat(null);
-//		        d.setTag(null);
-//		        
-//		        k.setId(null);
-//		        k.setNutzer(Nutzername);
-//		        k.setUhrzeit(u);
-//		        k.setInhalt(kommentar);
-//		     
-//		        re.getKommentare().getKommentar().add(k);
-	//	        System.out.println(re.getKommentare().getKommentar().get(3).inhalt);
+		        Uhrzeit u = new Uhrzeit();
+		        u.setMinute(null);
+		        u.setStunde(null);
+		        
+		        Datum d = new Datum();
+		        d.setJahr(null);
+		        d.setMonat(null);
+		        d.setTag(null);
+		        
+		        k.setId(null);
+		        k.setNutzer(Nutzername);
+		        k.setUhrzeit(u);
+		        k.setInhalt(kommentar);
+		        
+		        re.getKommentare().getKommentar().add(k); 
+
+		        //Jetzt wieder Marshallen!!
+		        System.out.println("Kommentar: " + re.getKommentare().getKommentar().get(
+		        		re.getKommentare().kommentar.size()-1).inhalt);
 		      
 	      
-
-	      //r.getRezept().get(rezeptid).getKommentare().kommentar.toString();
+		 }        
+	    //  r.getRezept().get(rezeptid).getKommentare().kommentar.toString();
 	}	
 }

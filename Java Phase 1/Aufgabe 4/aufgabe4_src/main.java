@@ -52,7 +52,7 @@ public class main {
 			kommentar = sc.nextLine();
 			
 		
-			verarbeiten.addKommentar(auswahl, kommentar);
+			//verarbeiten.addKommentar(auswahl, kommentar);
 			break;
 		}
 

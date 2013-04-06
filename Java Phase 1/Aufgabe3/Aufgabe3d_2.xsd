@@ -6,17 +6,24 @@
     <xs:element name="Rezeptname" type="xs:string"/>
     <xs:element name="Name" type="xs:string"/>
     <xs:element name="Menge" type="noZero"/>
-    <xs:element name="EinheitZutat" type="xs:string"/>
+    <xs:element name="Einheit" type="xs:string"/>
     <xs:element name="Zeit" type="noZero"/>
-    <xs:element name="EinheitArbeitszeit" type="xs:string"/> <!-- oder type="ArbeitszeitEinheit" -->
     <xs:element name="Schwierigkeitsgrad" type="Schwierigkeit" default="normal"/>
     <xs:element name="Personen" type="noZero" default="1"/>
     <xs:element name="Anzahl" type="noZero"/>
-    <xs:element name="EinheitBrennwert" type="xs:string" default="kcal"/>
     <xs:element name="Beschreibung" type="xs:string"/>
+    <xs:element name="Nutzer" type="xs:string"/>
+    <xs:element name="Tag" type="DatumTag"/>
+    <xs:element name="Monat" type="DatumMonat"/>
+    <xs:element name="Jahr" type="DatumJahr"/>
+    <xs:element name="Stunde" type="UhrStunde"/>
+    <xs:element name="Minute" type="UhrMinute"/>
+    <xs:element name="Inhalt" type="xs:string"/>
+    
     
     <!-- Attribute -->
     <xs:attribute name="id" type="xs:integer"/>
+    
     
     <!-- Complex Elements -->
     <xs:element name="Zutat">   
@@ -24,7 +31,7 @@
             <xs:sequence>
                 <xs:element ref="Name"/>
                 <xs:element ref="Menge"/>
-                <xs:element ref="EinheitZutat"/>
+                <xs:element ref="Einheit"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -34,7 +41,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element ref="Zeit"/>
-                <xs:element ref="EinheitArbeitszeit"/>
+                <xs:element ref="Einheit"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -44,7 +51,26 @@
             <xs:sequence>
                 <xs:element ref="Personen"/>
                 <xs:element ref="Anzahl"/>
-                <xs:element ref="EinheitBrennwert"/>
+                <xs:element ref="Einheit"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="Datum">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Tag"/>
+                <xs:element ref="Monat"/>
+                <xs:element ref="Jahr"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="Uhrzeit">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Stunde"/>
+                <xs:element ref="Minute"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -56,6 +82,26 @@
                 <xs:element ref="Schwierigkeitsgrad"/>
                 <xs:element ref="Brennwert"/>
                 <xs:element ref="Beschreibung"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="Kommentar">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Nutzer"/>
+                <xs:element ref="Datum"/>
+                <xs:element ref="Uhrzeit"/>
+                <xs:element ref="Inhalt"/>
+            </xs:sequence>
+            <xs:attribute ref="id" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="Kommentare">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Kommentar"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -75,6 +121,7 @@
                 <xs:element ref="Rezeptname"/>
                 <xs:element ref="Zutaten"/>
                 <xs:element ref="Zubereitung"/>
+                <xs:element ref="Kommentare"/>
             </xs:sequence>
             <xs:attribute ref="id" use="required"/>
         </xs:complexType>
@@ -117,5 +164,38 @@
             <xs:enumeration value="schwer"/>
         </xs:restriction>
     </xs:simpleType>
-
+    
+    <!-- Datentyp für Uhrzeit -->
+    
+    <xs:simpleType name="UhrStunde">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="[0-1][0-9]|20|21|22|23"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="UhrMinute">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="[0-5][0-9]"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Datentyp für Datum -->
+    
+    <xs:simpleType name="DatumTag">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="[0-2][1-9]|10|20|30|31"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="DatumMonat">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="[0][1-9]|10|11|12"/>
+        </xs:restriction>
+    </xs:simpleType>   
+    
+    <xs:simpleType name="DatumJahr">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="[2][0-9][0-9][0-9]"/>
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema> 

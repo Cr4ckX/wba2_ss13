@@ -33,8 +33,11 @@
 			</Beschreibung>
         </Zubereitung>
         
-    </Schokoladenkuchen>
+        
+        <Kommentare>
+            <Kommentar id="0" nutzer="swieselchen" datum="07.02.2002" uhrzeit="18:49">Habe Deinen Kuchen ...</Kommentar>
+        </Kommentare>
+    </Rezept>
+  
     
-    
-    
-</Rezept>
+</Rezepte>

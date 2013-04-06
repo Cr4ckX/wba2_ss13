@@ -87,7 +87,7 @@ public class XmlVerarbeiten {
 		return "Fehler aufgetreten. Bitte Programm beenden.";
 		
 	}
-	
+/*	
 	public void addKommentar(int rezeptid, String kommentar) throws Exception{
 		
 //		JAXBContext context = JAXBContext.newInstance(Rezepte.class);
@@ -115,4 +115,6 @@ public class XmlVerarbeiten {
 		final Transformer serializer = tf.newTransformer();
 		serializer.transform(domSource, streamResult);
 	}
+	
+	*/
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Rezepte xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:noNamespaceSchemaLocation="Aufgabe3d.xsd">
+ xsi:noNamespaceSchemaLocation="Aufgabe3d_1.xsd">
     <Rezept id="0">
         <Rezeptname>Lenchen’s Schokoladenkuchen</Rezeptname>
         <Zutaten>
@@ -70,6 +70,22 @@
 				Bei 180°Grad 40 – 50 Minuten backen.
 			</Beschreibung>
         </Zubereitung>
+        
+        <Kommentare>
+            <Kommentar id="0">
+                <Nutzer>swieselchen</Nutzer>
+                <Datum>
+                    <Tag>07</Tag>
+                    <Monat>02</Monat>
+                    <Jahr>2002</Jahr>
+                </Datum>
+                <Uhrzeit>
+                    <Stunde>18</Stunde>
+                    <Minute>49</Minute>
+                </Uhrzeit>
+                <Inhalt>Habe Deinen Kuchen ...</Inhalt>
+            </Kommentar>
+        </Kommentare>
         
     </Rezept>
     

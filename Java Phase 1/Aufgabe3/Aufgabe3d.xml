@@ -29,6 +29,21 @@
             </Brennwert>
             <Beschreibung>Alle Zutaten mischen. Fertig!</Beschreibung>
         </Zubereitung>
+        <Kommentare>
+            <Kommentar id="1">
+                <Nutzer>Ich</Nutzer>
+                <Datum>
+                    <Tag>01</Tag>
+                    <Monat>04</Monat>
+                    <Jahr>2013</Jahr>
+                </Datum>
+                <Uhrzeit>
+                    <Stunde>12</Stunde>
+                    <Minute>30</Minute>
+                </Uhrzeit>
+                <Inhalt>Schönes Rezept!</Inhalt>
+            </Kommentar>
+        </Kommentare>
     </Rezept>
     
     <Rezept id="2">
@@ -53,5 +68,20 @@
             </Brennwert>
             <Beschreibung>Eier bleiben wie sie sind.</Beschreibung>
         </Zubereitung>
+        <Kommentare>
+            <Kommentar id="2">
+                <Nutzer>Ich</Nutzer>
+                <Datum>
+                    <Tag>01</Tag>
+                    <Monat>04</Monat>
+                    <Jahr>2013</Jahr>
+                </Datum>
+                <Uhrzeit>
+                    <Stunde>12</Stunde>
+                    <Minute>35</Minute>
+                </Uhrzeit>
+                <Inhalt>Auch ein sehr schönes Rezept!</Inhalt>
+            </Kommentar>
+        </Kommentare>
     </Rezept>
 </Rezepte>

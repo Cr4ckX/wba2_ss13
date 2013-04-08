@@ -5,8 +5,10 @@ import java.util.Scanner;
 
 /**
  * 
- * @author CrackX Liest festgelegte XML-Datei ein und gibt die beinhalteten
- *         Informationen angepasst an dem XML-Schema aus Aufgabe 3 aus.
+ * @author CrackX 
+ * 
+ * Liest festgelegte XML-Datei ein und gibt die beinhalteten
+ * Informationen angepasst an dem XML-Schema aus Aufgabe 3 aus.
  * 
  */
 public class main {

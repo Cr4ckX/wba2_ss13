@@ -1,7 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Hierbei handelt es sich um die XML-Datei, welche gegen das erstelle Schema geprüft wird.-->
-<Rezepte xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="Aufgabe3d_1.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Rezepte>
     <Rezept id="1">
         <Rezeptname>Mein Lieblingsgericht</Rezeptname>
         <Zutaten>
@@ -33,8 +31,8 @@
             <Kommentar id="1">
                 <Nutzer>Ich</Nutzer>
                 <Datum>
-                    <Tag>01</Tag>
-                    <Monat>04</Monat>
+                    <Tag>1</Tag>
+                    <Monat>4</Monat>
                     <Jahr>2013</Jahr>
                 </Datum>
                 <Uhrzeit>
@@ -45,7 +43,6 @@
             </Kommentar>
         </Kommentare>
     </Rezept>
-    
     <Rezept id="2">
         <Rezeptname>Mein zweites Lieblingsgericht</Rezeptname>
         <Zutaten>
@@ -72,8 +69,8 @@
             <Kommentar id="1">
                 <Nutzer>Ich</Nutzer>
                 <Datum>
-                    <Tag>01</Tag>
-                    <Monat>04</Monat>
+                    <Tag>1</Tag>
+                    <Monat>4</Monat>
                     <Jahr>2013</Jahr>
                 </Datum>
                 <Uhrzeit>
@@ -81,6 +78,19 @@
                     <Minute>35</Minute>
                 </Uhrzeit>
                 <Inhalt>Auch ein sehr schönes Rezept!</Inhalt>
+            </Kommentar>
+            <Kommentar id="2">
+                <Nutzer>David</Nutzer>
+                <Datum>
+                    <Tag>8</Tag>
+                    <Monat>4</Monat>
+                    <Jahr>2013</Jahr>
+                </Datum>
+                <Uhrzeit>
+                    <Stunde>18</Stunde>
+                    <Minute>14</Minute>
+                </Uhrzeit>
+                <Inhalt>Dies ist Testweise ein Kommentar. Er sollte ordentlich zu der XML-Datei hinzugefügt werden. Das Datum ebenfalls. Es ist etwas kompliziert eingelesen, man hätte es auch mit dem Datentyp dateTime in der Schema-Datei lösen können.</Inhalt>
             </Kommentar>
         </Kommentare>
     </Rezept>

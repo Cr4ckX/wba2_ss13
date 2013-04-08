@@ -151,7 +151,7 @@ public class XmlVerarbeiten {
 		        	{
 		        		id = kommentarId;
 		        	}
-		        	
+	
 		        }
 		        
 		        id++;
@@ -179,12 +179,11 @@ public class XmlVerarbeiten {
 		        Marshaller marshaller = jc.createMarshaller();
 		        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		        
-		        //Sicherheitshalber neue Datei erstellt
-		        //marshaller.marshal(r, new File("Aufgabe 4/aufgabe4_src/Aufgabe3dgenerated.xml"));
-		        marshaller.marshal(r, System.out);
+		        //Output: Aufgabe3d.xml, 'System.out' für manual-Debugging verwenden
+		        marshaller.marshal(r, new File("Aufgabe 4/aufgabe4_src/Aufgabe3d.xml"));
 		        
-		        //Nochmal Test ob alles geklappt hat
-		        System.out.println("Kommentar: " + re.getKommentare().getKommentar().get(
+		        //Nochmal Test ob Kommentar geklappt hat
+		        System.out.println("Folgender Kommentar wurde hinzugefügt: " + re.getKommentare().getKommentar().get(
 		        		re.getKommentare().kommentar.size()-1).inhalt);
 		      
 	      

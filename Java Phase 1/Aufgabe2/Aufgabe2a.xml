@@ -9,6 +9,7 @@
             <Nachname>Petersen</Nachname>
             <Email>spam@spam.com</Email>
             <Geburtsdatum>
+                <!-- oder vorgegebenen DateTyp benutzen -->
                 <Tag>14</Tag>
                 <Monat>03</Monat>
                 <Jahr>1992</Jahr>

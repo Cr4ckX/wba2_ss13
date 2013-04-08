@@ -81,12 +81,19 @@ public class XmlVerarbeiten {
 	        System.out.println("Beschreibung: " + re.getZubereitung().beschreibung + "\r\n");
 	        
 	        System.out.println("Kommentare:");
-	        for (int k = 0; k < re.getKommentare().kommentar.size(); k++){
-	        	Kommentar ko = (Kommentar) re.getKommentare().getKommentar().get(k);
-	        	System.out.println(ko.nutzer + " schrieb am " + ko.datum.getTag() + "." +
-	        			ko.datum.getMonat() + "." + ko.datum.getJahr() + ": " +
-	        			ko.inhalt + "\r\n");		
+	        if(re.getKommentare().kommentar.size() == 0){
+	        	System.out.println("Bisher gibt es keine Kommentare zu diesem Rezept");
 	        }
+	        else{
+	        
+		        for (int k = 0; k < re.getKommentare().kommentar.size(); k++){
+		        	Kommentar ko = (Kommentar) re.getKommentare().getKommentar().get(k);
+		        	System.out.println(ko.nutzer + " schrieb am " + ko.datum.getTag() + "." +
+		        			ko.datum.getMonat() + "." + ko.datum.getJahr() + ": " +
+		        			ko.inhalt);		
+		        }
+	        }
+	        System.out.println("\r\n");
 	        System.out.println("------------------------------------------------------" + "\r\n");
 	           
 

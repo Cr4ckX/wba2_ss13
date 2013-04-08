@@ -144,6 +144,20 @@ public class XmlVerarbeiten {
 		        Rezept re = (Rezept) r.getRezept().get(rezeptid-1);
 		        Kommentar k = new Kommentar();
 		        
+		        int id = 0;
+		        for (int i = 0; i<re.getKommentare().kommentar.size(); i++){
+		        	int kommentarId = re.getKommentare().getKommentar().get(i).id.intValue();
+		        	if (kommentarId > id)
+		        	{
+		        		id = kommentarId;
+		        	}
+		        	
+		        }
+		        
+		        id++;
+		        
+		        BigInteger newKommentarId = BigInteger.valueOf(id);
+		        
 		        Uhrzeit u = new Uhrzeit();
 		        u.setMinute(minutes);
 		        u.setStunde(stunden);
@@ -153,7 +167,7 @@ public class XmlVerarbeiten {
 		        d.setMonat(monat);
 		        d.setJahr(jahr);
 		        
-		        k.setId(null);
+		        k.setId(newKommentarId);
 		        k.setNutzer(Nutzername);
 		        k.setDatum(d);
 		        k.setUhrzeit(u);

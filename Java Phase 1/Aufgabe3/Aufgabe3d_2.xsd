@@ -5,7 +5,7 @@
     <!--Simple Elements -->
     <xs:element name="Rezeptname" type="xs:string"/>
     <xs:element name="Name" type="xs:string"/>
-    <xs:element name="Menge" type="noZero"/>
+    <xs:element name="Menge"/>
     <xs:element name="Einheit" type="xs:string"/>
     <xs:element name="Zeit" type="noZero"/>
     <xs:element name="Schwierigkeitsgrad" type="Schwierigkeit" default="normal"/>
